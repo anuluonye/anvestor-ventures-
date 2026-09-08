@@ -1,0 +1,432 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anvestor Ventures | Electrical & Electronics</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            color: #ffffff;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        header {
+            background: #000000;
+            border-bottom: 2px solid #0066ff;
+            padding: 20px 7%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #0066ff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #0066ff;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 7%;
+            background: linear-gradient(120deg, #000000, #071a35);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #0066ff;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #0066ff;
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #004ecc;
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        .section {
+            padding: 80px 7%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .section h2 span {
+            color: #0066ff;
+        }
+
+        .section-intro {
+            color: #aaaaaa;
+            margin-bottom: 40px;
+        }
+
+        /* =========================
+           PRODUCT CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #111111;
+            border: 1px solid #222222;
+            padding: 35px 25px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #0066ff;
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #0066ff;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #bbbbbb;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           ABOUT SECTION
+        ========================= */
+
+        .about {
+            background: #0b0b0b;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            color: #cccccc;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* =========================
+           CONTACT SECTION
+        ========================= */
+
+        .contact {
+            background: #071a35;
+        }
+
+        .contact p {
+            color: #cccccc;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #000000;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #222222;
+            color: #888888;
+        }
+
+        /* =========================
+           MOBILE RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <header>
+        <nav>
+
+            <a href="#home" class="logo">
+                ANVESTOR <span>VENTURES</span>
+            </a>
+
+            <ul>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#products">Products</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         HOME SECTION
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome to
+                <span>Anvestor Ventures</span>
+            </h1>
+
+            <p>
+                Your trusted destination for electrical products,
+                electronic equipment, appliances and technical solutions.
+            </p>
+
+            <a href="#products" class="button">
+                Explore Products
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUCTS SECTION
+    ========================= -->
+
+    <section class="section" id="products">
+
+        <h2>
+            Our <span>Products</span>
+        </h2>
+
+        <p class="section-intro">
+            Quality electrical and electronic products for your needs.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Audio & Sound
+                </h3>
+
+                <p>
+                    Amplifiers, speakers, microphones,
+                    audio accessories and sound-system equipment.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Electrical
+                </h3>
+
+                <p>
+                    Electrical appliances, components,
+                    cables, accessories and related products.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Electronics
+                </h3>
+
+                <p>
+                    Electronic components, devices,
+                    accessories and technical equipment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================= -->
+
+    <section class="section about" id="about">
+
+        <h2>
+            About <span>Anvestor Ventures</span>
+        </h2>
+
+        <p>
+            Anvestor Ventures is an electrical and electronics business
+            focused on providing quality products and practical
+            technical solutions to individuals, businesses and
+            electronics enthusiasts.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================= -->
+
+    <section class="section contact" id="contact">
+
+        <h2>
+            Contact <span>Us</span>
+        </h2>
+
+        <p>
+            Interested in any of our products or services?
+            Get in touch with Anvestor Ventures.
+        </p>
+
+        <a href="#" class="button">
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Anvestor Ventures. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
