@@ -1,432 +1,254 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anvestor Ventures | Electrical, Electronics & Audio</title>
+  <meta name="description" content="Anvestor Ventures — electrical, electronics, appliances, accessories and professional audio equipment.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #111827;
+      line-height: 1.6;
+    }
+    header {
+      background: #050b16;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,.18);
+    }
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: .8px;
+      color: #fff;
+    }
+    .logo span { color: #1683ff; }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+    nav a:hover { color: #1683ff; }
 
-    <title>Anvestor Ventures | Electrical & Electronics</title>
+    .hero {
+      background: linear-gradient(135deg, #050b16 0%, #0b1f3a 55%, #075fc5 100%);
+      color: #fff;
+      padding: 95px 22px 85px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+    .hero h1 span { color: #1683ff; }
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: #dbeafe;
+      font-size: 1.1rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #1683ff;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 2px solid #1683ff;
+    }
+    .btn:hover { background: #0b68cf; border-color: #0b68cf; }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 70px 22px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+    .section-title h2 {
+      font-size: 2rem;
+      color: #050b16;
+      margin-bottom: 8px;
+    }
+    .section-title p { color: #667085; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #e3e8ef;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, .08);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, .13);
+    }
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      background: #fff;
+    }
+    .product-info { padding: 22px; }
+    .product-info h3 {
+      color: #0b1f3a;
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+    .price {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #075fc5;
+      margin: 10px 0 15px;
+    }
+    .product-tag {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 700;
+      color: #075fc5;
+      background: #e8f2ff;
+      padding: 5px 9px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    .product-info .btn {
+      width: 100%;
+      text-align: center;
+    }
 
-        body {
-            background: #050505;
-            color: #ffffff;
-        }
+    .about, .contact {
+      background: #fff;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 8px 25px rgba(15, 23, 42, .06);
+    }
+    .about p { color: #4b5563; }
+    .contact p { margin: 8px 0; }
+    footer {
+      background: #050b16;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 30px;
+    }
 
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        header {
-            background: #000000;
-            border-bottom: 2px solid #0066ff;
-            padding: 20px 7%;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #0066ff;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            color: #0066ff;
-        }
-
-        /* =========================
-           HERO SECTION
-        ========================= */
-
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            padding: 60px 7%;
-            background: linear-gradient(120deg, #000000, #071a35);
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 55px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #0066ff;
-        }
-
-        .hero p {
-            font-size: 20px;
-            line-height: 1.7;
-            color: #cccccc;
-            margin-bottom: 30px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #0066ff;
-            color: #ffffff;
-            padding: 15px 30px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #004ecc;
-        }
-
-        /* =========================
-           GENERAL SECTION
-        ========================= */
-
-        .section {
-            padding: 80px 7%;
-            text-align: center;
-        }
-
-        .section h2 {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .section h2 span {
-            color: #0066ff;
-        }
-
-        .section-intro {
-            color: #aaaaaa;
-            margin-bottom: 40px;
-        }
-
-        /* =========================
-           PRODUCT CARDS
-        ========================= */
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: #111111;
-            border: 1px solid #222222;
-            padding: 35px 25px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: #0066ff;
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: #0066ff;
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        .card p {
-            color: #bbbbbb;
-            line-height: 1.6;
-        }
-
-        /* =========================
-           ABOUT SECTION
-        ========================= */
-
-        .about {
-            background: #0b0b0b;
-        }
-
-        .about p {
-            max-width: 750px;
-            margin: auto;
-            color: #cccccc;
-            line-height: 1.8;
-            font-size: 17px;
-        }
-
-        /* =========================
-           CONTACT SECTION
-        ========================= */
-
-        .contact {
-            background: #071a35;
-        }
-
-        .contact p {
-            color: #cccccc;
-            margin-bottom: 25px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #000000;
-            text-align: center;
-            padding: 25px;
-            border-top: 1px solid #222222;
-            color: #888888;
-        }
-
-        /* =========================
-           MOBILE RESPONSIVE DESIGN
-        ========================= */
-
-        @media (max-width: 768px) {
-
-            nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                min-height: 70vh;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    @media (max-width: 700px) {
+      .nav { flex-direction: column; }
+      nav a { margin: 0 7px; font-size: .9rem; }
+      .hero { padding: 70px 18px; }
+      section { padding: 55px 18px; }
+      .about, .contact { padding: 25px; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
+<header>
+  <div class="nav">
+    <div class="logo">ANVESTOR <span>VENTURES</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <header>
-        <nav>
+<main>
+  <section class="hero" id="home">
+    <h1>Welcome to <span>Anvestor Ventures</span></h1>
+    <p>Electrical, electronics, appliances, accessories and professional audio equipment.</p>
+    <a class="btn" href="#products">View Products</a>
+  </section>
 
-            <a href="#home" class="logo">
-                ANVESTOR <span>VENTURES</span>
-            </a>
+  <section id="products">
+    <div class="section-title">
+      <h2>Featured Products</h2>
+      <p>Quality equipment and electronics at competitive prices.</p>
+    </div>
 
-            <ul>
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-
-                <li>
-                    <a href="#products">Products</a>
-                </li>
-
-                <li>
-                    <a href="#about">About</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-
-        </nav>
-    </header>
-
-
-    <!-- =========================
-         HOME SECTION
-    ========================= -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <h1>
-                Welcome to
-                <span>Anvestor Ventures</span>
-            </h1>
-
-            <p>
-                Your trusted destination for electrical products,
-                electronic equipment, appliances and technical solutions.
-            </p>
-
-            <a href="#products" class="button">
-                Explore Products
-            </a>
-
+    <div class="products">
+      <article class="product-card">
+        <img class="product-image" src="wharfedale-mp-2800.jpg" alt="Wharfedale MP 2800 Professional Power Amplifier">
+        <div class="product-info">
+          <span class="product-tag">AUDIO & SOUND</span>
+          <h3>Wharfedale MP 2800 Professional Power Amplifier</h3>
+          <div class="price">₦580,000</div>
+          <a class="btn" href="#contact">Contact Us to Order</a>
         </div>
+      </article>
 
-    </section>
-
-
-    <!-- =========================
-         PRODUCTS SECTION
-    ========================= -->
-
-    <section class="section" id="products">
-
-        <h2>
-            Our <span>Products</span>
-        </h2>
-
-        <p class="section-intro">
-            Quality electrical and electronic products for your needs.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <h3>
-                    Audio & Sound
-                </h3>
-
-                <p>
-                    Amplifiers, speakers, microphones,
-                    audio accessories and sound-system equipment.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    Electrical
-                </h3>
-
-                <p>
-                    Electrical appliances, components,
-                    cables, accessories and related products.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    Electronics
-                </h3>
-
-                <p>
-                    Electronic components, devices,
-                    accessories and technical equipment.
-                </p>
-
-            </div>
-
+      <article class="product-card">
+        <img class="product-image" src="12-channel-mixer.jpg" alt="12 Channel Amplified Mixer with USB and SD">
+        <div class="product-info">
+          <span class="product-tag">AUDIO & SOUND</span>
+          <h3>Flat Amplified Mixer with USB & SD — 12 Channels</h3>
+          <div class="price">₦158,830</div>
+          <a class="btn" href="#contact">Contact Us to Order</a>
         </div>
+      </article>
+    </div>
+  </section>
 
-    </section>
+  <section id="about">
+    <div class="section-title">
+      <h2>About Anvestor Ventures</h2>
+    </div>
+    <div class="about">
+      <p>
+        Anvestor Ventures provides electrical, electronics, appliances, accessories
+        and professional audio solutions. Our goal is to make quality products and
+        technical solutions easier for customers to access.
+      </p>
+    </div>
+  </section>
 
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Anvestor Ventures</h2>
+      <p>Contact us for product availability, pricing and orders.</p>
+    </div>
+    <div class="contact">
+      <p><strong>Business:</strong> Anvestor Ventures</p>
+      <p><strong>Phone / WhatsApp:</strong> Add your number here</p>
+      <p><strong>Email:</strong> Add your business email here</p>
+      <p><strong>Location:</strong> Nigeria</p>
+    </div>
+  </section>
+</main>
 
-    <!-- =========================
-         ABOUT SECTION
-    ========================= -->
-
-    <section class="section about" id="about">
-
-        <h2>
-            About <span>Anvestor Ventures</span>
-        </h2>
-
-        <p>
-            Anvestor Ventures is an electrical and electronics business
-            focused on providing quality products and practical
-            technical solutions to individuals, businesses and
-            electronics enthusiasts.
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT SECTION
-    ========================= -->
-
-    <section class="section contact" id="contact">
-
-        <h2>
-            Contact <span>Us</span>
-        </h2>
-
-        <p>
-            Interested in any of our products or services?
-            Get in touch with Anvestor Ventures.
-        </p>
-
-        <a href="#" class="button">
-            Contact Us
-        </a>
-
-    </section>
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
-
-        <p>
-            © 2026 Anvestor Ventures. All Rights Reserved.
-        </p>
-
-    </footer>
+<footer>
+  &copy; 2026 Anvestor Ventures. All Rights Reserved.
+</footer>
 
 </body>
 </html>
-```
